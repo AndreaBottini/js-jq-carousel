@@ -23,8 +23,13 @@ $(document).ready(
 function nextFoto() {
   // alert('nextFoto');
   var actualImage = $('img.active');
+  // utilizzo .next per selezionare immagine successiva
+  var imageSucc = actualImage.next();
+  console.log(imageSucc);
+
   // rimozione classe active
   actualImage.removeClass('active');
+
   console.log(actualImage);
 }
 
