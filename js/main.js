@@ -26,13 +26,19 @@ function nextFoto() {
   // utilizzo .next per selezionare immagine successiva
   var imageSucc = actualImage.next();
   // console.log(imageSucc);
-  // rimozione classe active
+  // gestione pallini immagini
+  var activeSpot = $('i.active');
+  var activeSpotSucc = activeSpot.next();
   if (actualImage.hasClass('last') == true) {
     actualImage.removeClass('active');
     $('img.first').addClass('active');
+    activeSpot.removeClass('active');
+    $('i.first').addClass('active');
   } else {
     actualImage.removeClass('active');
     imageSucc.addClass('active');
+    activeSpot.removeClass('active');
+    activeSpotSucc.addClass('active');
   }
 }
 // imposto anche la parte Previous foto nella funzione
@@ -42,12 +48,17 @@ function prevFoto() {
   // utilizzo .next per selezionare immagine successiva
   var imagePrev = actualImage.prev();
   // console.log(imagePrev);
-  // rimozione classe active
+  var activeSpot = $('i.active');
+  var activeSpotPrev = activeSpot.prev();
   if (actualImage.hasClass('first') == true) {
     actualImage.removeClass('active');
     $('img.last').addClass('active');
+    activeSpot.removeClass('active');
+    $('i.last').addClass('active');
   } else {
     actualImage.removeClass('active');
     imagePrev.addClass('active');
+    activeSpot.removeClass('active');
+    activeSpotPrev.addClass('active');
   }
 }
