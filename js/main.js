@@ -21,9 +21,13 @@ $(document).ready(
 
 // Creo le funzioni da inserire
 function nextFoto() {
-  alert('nextFoto');
+  // alert('nextFoto');
+  var actualImage = $('img.active');
+  // rimozione classe active
+  actualImage.removeClass('active');
+  console.log(actualImage);
 }
 
 function prevFoto() {
-  alert('prev Foto');
+  // alert('prevFoto');
 }
